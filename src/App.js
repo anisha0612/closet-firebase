@@ -1,6 +1,10 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Homepage from "./pages/HomePage/HomePage";
+import Homepage from "./pages/HomePage/HomePage.jsx";
+import ShopPage from "./pages/ShopPage/ShopPage.jsx";
+import SignInAndSignUpPage from "./pages/SignInAndSignUpPage/SignInAndSignUpPage.jsx";
+import Header from "./components/Header/Header.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 class App extends React.Component {
@@ -11,14 +15,14 @@ class App extends React.Component {
     };
   }
   render() {
-    const { currentUser } = this.state;
+    // const { currentUser } = this.state;
     return (
       <div className='App'>
-        {/* <Header currentUser={currentUser} /> */}
+        <Header />
         <Switch>
           <Route exact path='/' component={Homepage} />
-          {/* <Route exact path='/shop' component={ShopPage} />
-          <Route exact path='/signin' component={SignInAndSignUpPage} /> */}
+          <Route exact path='/shop' component={ShopPage} />
+          <Route exact path='/signin' component={SignInAndSignUpPage} />
         </Switch>
       </div>
     );
